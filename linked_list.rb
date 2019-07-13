@@ -83,4 +83,28 @@ class LinkedList
     false
   end
 
+  def find(value)
+    current_node = @head
+    i = 0
+    until current_node.nil?
+      if current_node.value == value
+        return i 
+      else
+        current_node = current_node.next_node
+        i += 1
+      end
+      nil
+    end
+  end
+
+  def to_s
+    rep = ""
+    current_node = @head
+    until current_node == nil
+      rep += "( #{current_node.value} ) -> "
+      current_node = current_node.next_node
+    end
+    rep += "nil"
+  end
+
 end
