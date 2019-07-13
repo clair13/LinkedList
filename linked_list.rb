@@ -12,4 +12,25 @@ class LinkedList
     @head = head
     @tail = tail
   end
+
+  def append(node)
+    if head.nil?
+      @head = node
+      @tail = node
+    else
+      @tail.next_node = node
+      @tail = node
+      @tail.next_node = nil
+    end
+  end
+
+  def prepend(node)
+    if @head.nil?
+      @head = node
+      @tail = node
+    else
+      node.next_node = @head
+      @head = node
+    end
+  end
 end
